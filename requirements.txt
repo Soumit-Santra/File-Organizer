@@ -1,0 +1,14 @@
+# Universal File Organizer - Requirements
+# Python 3.8+ required
+
+# Image processing and EXIF metadata extraction
+Pillow
+
+# File system monitoring for watch mode
+watchdog
+
+# Note: tkinter is required but comes with Python by default
+# Linux users may need to install separately:
+#   Ubuntu/Debian: sudo apt-get install python3-tk
+#   Fedora: sudo dnf install python3-tkinter
+#   Arch: sudo pacman -S tk
