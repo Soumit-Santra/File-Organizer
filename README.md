@@ -488,18 +488,7 @@ A: Operations are performed file-by-file with logging. If interrupted, already-p
 
 For questions, suggestions, feature requests, or collaboration opportunities, feel free to reach out!
 
-- 🐙 **GitHub**: [github.com/yourusername](https://github.com/yourusername)
-- 📧 **Email**: your.email@example.com
-- 💼 **LinkedIn**: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
-
----
-
-## 📊 Stats
-
-![GitHub stars](https://img.shields.io/github/stars/yourusername/universal-file-organizer?style=social)
-![GitHub forks](https://img.shields.io/github/forks/yourusername/universal-file-organizer?style=social)
-![GitHub issues](https://img.shields.io/github/issues/yourusername/universal-file-organizer)
-![GitHub license](https://img.shields.io/github/license/yourusername/universal-file-organizer)
+- 🐙 **GitHub**: [github.com/yourusername](https://github.com/Soumit-Santra)
 
 ---
 
