@@ -1,9 +1,13 @@
-# File Organizer
-# Organizes any file type into folders based on date: Category/Year/Month_Year/Day_Month_Year structure
-# Moves or copies files from source to organized destination folders
-# Features: Copy/Move toggle, Undo log, Dry run preview, Watch folder, Cloud drive support, Hash duplicate detection
-#**Created by Soumit Santra**  
-# © 2026 File Organizer. All rights reserved.
+"""
+File Organizer
+========================================================================
+
+Copyright (c) 2026 [Soumit Santra]
+All rights reserved.
+
+===================================================================
+
+"""
 
 import os
 import shutil
@@ -1415,4 +1419,5 @@ def main():
 
 
 if __name__ == "__main__":
+
     main()
