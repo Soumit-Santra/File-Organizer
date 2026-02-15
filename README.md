@@ -115,43 +115,78 @@
 
 ## 📦 Installation
 
-### Prerequisites
+### 🎯 Option 1: Download EXE (Easiest - Windows Only)
+
+**✅ No Python installation required!**
+
+1. **Download the latest release**
+   - Go to [Releases](https://github.com/yourusername/universal-file-organizer/releases)
+   - Download `FileOrganizer.exe` (or `FileOrganizer-v1.0.exe`)
+   - File size: ~50-100 MB (includes Python and all dependencies)
+
+2. **Run the application**
+   - Double-click `FileOrganizer.exe` to launch
+   - **Windows SmartScreen Warning**: If Windows Defender shows a warning:
+     - Click "More info"
+     - Click "Run anyway"
+     - This is normal for new executables without a code signing certificate
+
+3. **Optional: Create shortcuts**
+   - **Desktop shortcut**: Right-click EXE → "Send to" → "Desktop (create shortcut)"
+   - **Start Menu**: Right-click EXE → "Pin to Start"
+   - **Taskbar**: Right-click EXE → "Pin to taskbar"
+
+4. **First run**
+   - The app may take 5-10 seconds to launch initially
+   - Subsequent launches will be faster
+
+> **💡 Tip**: Keep the EXE in a permanent location before creating shortcuts (e.g., `C:\Program Files\FileOrganizer\` or `C:\Tools\FileOrganizer\`)
+
+> **🔒 Security Note**: The EXE is virus-free and safe. You can verify the file hash on the releases page or scan it with your antivirus software.
+
+---
+
+### 🐍 Option 2: Run from Source (All Platforms)
+
+**For advanced users, developers, or non-Windows platforms (macOS, Linux)**
+
+#### Prerequisites
 
 - Python 3.8 or higher
 - pip (Python package installer)
 
-### Platform-Specific Requirements
+#### Platform-Specific Requirements
 
-#### Windows
+##### Windows
 ```bash
 # Python usually includes tkinter by default
 python --version  # Verify Python 3.8+
 ```
 
-#### macOS
+##### macOS
 ```bash
 # Python usually includes tkinter by default
 python3 --version  # Verify Python 3.8+
 ```
 
-#### Linux (Ubuntu/Debian)
+##### Linux (Ubuntu/Debian)
 ```bash
 # Install Python and tkinter
 sudo apt-get update
 sudo apt-get install python3 python3-pip python3-tk
 ```
 
-#### Linux (Fedora)
+##### Linux (Fedora)
 ```bash
 sudo dnf install python3 python3-pip python3-tkinter
 ```
 
-#### Linux (Arch)
+##### Linux (Arch)
 ```bash
 sudo pacman -S python python-pip tk
 ```
 
-### Quick Start
+#### Quick Start
 
 1. **Clone the repository**
    ```bash
@@ -169,10 +204,10 @@ sudo pacman -S python python-pip tk
    python file_organizer.py
    ```
 
-### Alternative: Install from requirements.txt
+#### Alternative: Virtual Environment (Recommended)
 
 ```bash
-# Create virtual environment (recommended)
+# Create virtual environment
 python -m venv venv
 
 # Activate virtual environment
@@ -190,14 +225,35 @@ python file_organizer.py
 
 ---
 
+### 🔨 Option 3: Build EXE Yourself (Advanced)
+
+If you want to create your own executable from source:
+
+```bash
+# Install PyInstaller
+pip install pyinstaller
+
+# Build the EXE (Windows)
+pyinstaller --onefile --windowed --icon=icon.ico --name="FileOrganizer" file_organizer.py
+
+# The EXE will be in the 'dist' folder
+```
+
+**Build options:**
+- `--onefile`: Creates a single EXE file
+- `--windowed`: Hides the console window (GUI only)
+- `--icon=icon.ico`: Sets custom icon (optional)
+- `--name`: Sets the output filename
+
+---
+
 ## 🚀 Usage
 
 ### Basic Workflow
 
 1. **Launch the Application**
-   ```bash
-   python file_organizer.py
-   ```
+   - **EXE users**: Double-click `FileOrganizer.exe`
+   - **Source users**: Run `python file_organizer.py`
 
 2. **Select Operation Mode**
    - Choose between "Move Files" or "Copy Files"
@@ -331,7 +387,7 @@ Monitor your file organization with live progress bars and detailed logging.
 
 ### Undo Log Location
 
-The undo log is stored as `file_organizer_undo_log.json` in the same directory as the script.
+The undo log is stored as `file_organizer_undo_log.json` in the same directory as the script or EXE.
 
 ### Customizing File Categories
 
@@ -400,6 +456,12 @@ A: Yes, it's completely safe! The tool has a dry run mode to preview changes, an
 </details>
 
 <details>
+<summary><strong>Q: Why does Windows show a security warning for the EXE?</strong></summary>
+<br>
+A: This is normal for new executables that don't have a Microsoft code signing certificate (which costs hundreds of dollars annually). The EXE is safe and virus-free. Click "More info" → "Run anyway" to proceed. You can also scan it with your antivirus software or build it yourself from source.
+</details>
+
+<details>
 <summary><strong>Q: Can I organize files from multiple folders at once?</strong></summary>
 <br>
 A: Currently, you can organize one folder at a time, or select multiple individual files. For batch processing of multiple folders, you can run the operation sequentially.
@@ -441,10 +503,24 @@ A: Yes! The tool uses `shutil.copy2()` which preserves metadata, and it reads EX
 A: Operations are performed file-by-file with logging. If interrupted, already-processed files remain organized, and you can run the tool again on remaining files. The undo log tracks completed operations.
 </details>
 
+<details>
+<summary><strong>Q: Why is the EXE file so large (50-100 MB)?</strong></summary>
+<br>
+A: The EXE is a standalone executable that bundles Python, all libraries (Pillow, watchdog, etc.), and the application code. This makes it portable and eliminates the need for users to install Python separately.
+</details>
+
+<details>
+<summary><strong>Q: Can I run this on macOS or Linux?</strong></summary>
+<br>
+A: Yes! The EXE is Windows-only, but you can run from source code on any platform (Windows, macOS, Linux) by installing Python and the required dependencies.
+</details>
+
 ---
 
 ## 🐛 Known Issues
 
+- **Windows EXE**: First launch may take 5-10 seconds as files are extracted
+- **Windows Defender**: May show SmartScreen warning for unsigned executables
 - **macOS**: Some cloud drive paths may require full disk access permissions
 - **Linux**: Watch mode may require increased inotify limits for large folders
   ```bash
@@ -456,6 +532,9 @@ A: Operations are performed file-by-file with logging. If interrupted, already-p
 
 ## 🗺️ Roadmap
 
+- [x] Windows EXE executable for easy distribution
+- [ ] macOS app bundle (.app)
+- [ ] Linux AppImage/Flatpak
 - [ ] Support for additional organization methods (by file extension, by camera model)
 - [ ] Batch processing profiles (save and load configurations)
 - [ ] Multi-language support
@@ -470,6 +549,7 @@ A: Operations are performed file-by-file with logging. If interrupted, already-p
 
 - **Issues**: [GitHub Issues](https://github.com/yourusername/universal-file-organizer/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/yourusername/universal-file-organizer/discussions)
+- **Download EXE**: [Latest Releases](https://github.com/yourusername/universal-file-organizer/releases)
 
 ---
 
@@ -478,6 +558,7 @@ A: Operations are performed file-by-file with logging. If interrupted, already-p
 - Built with [Pillow](https://python-pillow.org/) for image processing
 - File system monitoring powered by [Watchdog](https://github.com/gorakhargosh/watchdog)
 - UI framework: [Tkinter](https://docs.python.org/3/library/tkinter.html)
+- EXE packaging: [PyInstaller](https://www.pyinstaller.org/)
 
 ---
 
@@ -488,7 +569,7 @@ A: Operations are performed file-by-file with logging. If interrupted, already-p
 
 For questions, suggestions, feature requests, or collaboration opportunities, feel free to reach out!
 
-- 🐙 **GitHub**: [github.com/yourusername](https://github.com/Soumit-Santra)
+- 🐙 **GitHub**: [github.com/Soumit-Santra](https://github.com/Soumit-Santra)
 
 ---
 
