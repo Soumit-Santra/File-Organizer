@@ -425,7 +425,7 @@ Contributions are welcome! Here's how you can help:
 
 ```bash
 # Clone your fork
-git clone https://github.com/yourusername/universal-file-organizer.git
+git clone https://github.com/Soumit-Santra/File-Organizer.git
 cd universal-file-organizer
 
 # Create virtual environment
