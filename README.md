@@ -190,7 +190,7 @@ sudo pacman -S python python-pip tk
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/universal-file-organizer.git
+   git clone https://github.com/Soumit-Santra/File-Organizer.git
    cd universal-file-organizer
    ```
 
