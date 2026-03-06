@@ -547,9 +547,9 @@ A: Yes! The EXE is Windows-only, but you can run from source code on any platfor
 
 ## 💬 Support
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/universal-file-organizer/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/universal-file-organizer/discussions)
-- **Download EXE**: [Latest Releases](https://github.com/yourusername/universal-file-organizer/releases)
+- **Issues**: [GitHub Issues](https://github.com/Soumit-Santra/universal-file-organizer/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/Soumit-Santra/universal-file-organizer/discussions)
+- **Download EXE**: [Latest Releases](https://github.com/Soumit-Santra/universal-file-organizer/releases)
 
 ---
 
